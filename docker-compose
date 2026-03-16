@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zulip-checkbot
+    restart: unless-stopped  # restart on his own automaticaly after VM restart
+    volumes:
+      - .:/app                # монтируем текущую папку — .env, status-файлы и checkbot.py видны внутри
+    network_mode: host        # using host ip, so bot could see SSH 192.168.56.101
+    environment:
+      - PYTHONUNBUFFERED=1    # logs in real time

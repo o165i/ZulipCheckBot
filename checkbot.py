@@ -210,12 +210,12 @@ def main():
             username=None,
             password=None
         ),
-        #ServerMonitor(  # remote VM
-         #   ip="192.168.56.102",
-          #  username="o165i",
-           # password="Saneck2281337!!",
-            #ssh_port=22
-        #),
+        ServerMonitor(  # remote VM
+            ip="192.168.56.102",
+            username="o165i",
+           password="Saneck2281337!!",
+            ssh_port=22
+        ),
     ]
 
     while True:
